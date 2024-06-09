@@ -6,6 +6,8 @@ function createMatrixInputs() {
     const matrixSize = parseInt(document.getElementById("matrixSize").value, 10);
     const matrixAContainer = document.getElementById("matrixA");
     const matrixBContainer = document.getElementById("matrixB");
+    const matrixASize = document.getElementById("matrixASize").value;
+    const matrixBSize = document.getElementById("matrixBSize").value;
 
     matrixAContainer.innerHTML = generateMatrixInputs(matrixSize, "matrixA");
     matrixBContainer.innerHTML = generateMatrixInputs(matrixSize, "matrixB");
@@ -15,7 +17,6 @@ function createMatrixInputs() {
 
     matrixBContainer.innerHTML = generateMatrixInputs(matrixSize, "matrixB");
 }
-
 
 function generateMatrixInputs(size, matrixId) {
     let matrixInputs = "";
@@ -43,6 +44,20 @@ function getMatrixValues(matrixId) {
     }
 
     return matrixValues;
+}
+
+function checkMultiplication(matrixASize, matrixBSize) {
+    if(matrixASize && matrixBSize){
+        if (matrixASize == matrixBSize) {
+            message.textContent = "Multiplication is possible.";
+            message.style.color = "green";
+        } else {
+            message.textContent = "Multiplication not possible.";
+            message.style.color = "red";
+        }
+    } else {
+        message.textContent = "";
+    }
 }
 
 function setResult(resultMatrix) {

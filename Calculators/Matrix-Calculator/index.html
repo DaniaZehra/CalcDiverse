@@ -13,12 +13,27 @@
     <div id="matrixCalculator">
         <h2>Matrix Calculator</h2>
 
-        <label for="matrixSize">Matrix Size:</label>
-        <select id="matrixSize" onchange="createMatrixInputs()">
+        <label for="matrixASize">Matrix A Size:</label>
+        <select id="matrixASize" onchange="createMatrixInputs('A')">
             <option value="2" class="size">2 x 2</option>
             <option value="3" class="size">3 x 3</option>
             <option value="4" class="size">4 x 4</option>
+            <option value="2" class="size">2 x 1</option>
+            <option value="3" class="size">3 x 1</option>
+            <option value="4" class="size">4 x 1</option>
         </select>
+
+        <label for="matrixBSize">Matrix B Size:</label>
+        <select id="matrixBSize" onchange="createMatrixInputs('A')">
+            <option value="2" class="size">2 x 2</option>
+            <option value="3" class="size">3 x 3</option>
+            <option value="4" class="size">4 x 4</option>
+            <option value="2" class="size">2 x 1</option>
+            <option value="3" class="size">3 x 1</option>
+            <option value="4" class="size">4 x 1</option> 
+        </select>
+
+        <p id = "MultiplicationMessage"></p>
 
         <div id="matrixInputs">
             <!-- Matrix A -->
